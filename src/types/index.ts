@@ -27,6 +27,7 @@ export interface ConferencePhoto {
 export interface Socials {
   id: number;
   link: string;
-  icon: string;
+  icon: React.ReactNode;
   iconClass: string;
+  label: string;
 }

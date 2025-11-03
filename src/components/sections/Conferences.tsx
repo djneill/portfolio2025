@@ -3,7 +3,7 @@ import SectionTitle from "../ui/SectionTitle";
 
 export default function Conferences() {
   return (
-    <section className="py-32 bg-slate-900/50">
+    <section id="conferences" className="py-32 bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
           title="Conferences & Meetups"

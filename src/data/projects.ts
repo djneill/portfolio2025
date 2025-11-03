@@ -87,6 +87,18 @@ export const projects: Project[] = [
       "Let's Cook is a full-stack web app. I wanted to create a place where users could post their favorite recipes, search for new recipes, and save their favorite recipes to a collection that they could easily find. Users can like, save, and comment on recipes, as well as delete recipes from their favorites that they may not want to keep saved.",
   },
   {
+    id: "3",
+    tag: "Web App",
+    title: "PickleTrack",
+    img: "/images/work_images/pbs.png",
+    languages: "TypeScript, React, ASP.NET, PostgreSQL, Supabase, Azure",
+    link: "https://polite-tree-07cef7510.2.azurestaticapps.net/",
+    repoLink: "https://github.com/djneill/Pickleball-Scoreboard",
+    linkText: "polite-tree-07cef7510.2.azurestaticapps.net",
+    description:
+      "A full-stack app built to showcase enterprise-level engineering practices in a fun, lightweight project. Includes over 60 automated tests (unit, integration, and end-to-end with Playwright) to ensure reliability across the stack. Features Google OAuth, JWT authentication, and multi-tenant architecture with a PostgreSQL backend. Deployed on Azure, following clean architecture principles and CI/CD-ready workflows.",
+  },
+  {
     id: "8",
     tag: "Web App",
     title: "The Hangman Game",
@@ -122,18 +134,7 @@ export const projects: Project[] = [
     description:
       "Dev Search is a web application that allows users to search for GitHub profiles and view detailed information about developers. Users can search for any GitHub username, view their profile information, and toggle between light and dark themes.",
   },
-  {
-    id: "3",
-    tag: "Web App",
-    title: "PickleTrack",
-    img: "/images/work_images/pbs.png",
-    languages: "TypeScript, React, ASP.NET, PostgreSQL, Supabase, Azure",
-    link: "https://polite-tree-07cef7510.2.azurestaticapps.net/",
-    repoLink: "https://github.com/djneill/Pickleball-Scoreboard",
-    linkText: "polite-tree-07cef7510.2.azurestaticapps.net",
-    description:
-      "A full-stack app built to showcase enterprise-level engineering practices in a fun, lightweight project. Includes over 60 automated tests (unit, integration, and end-to-end with Playwright) to ensure reliability across the stack. Features Google OAuth, JWT authentication, and multi-tenant architecture with a PostgreSQL backend. Deployed on Azure, following clean architecture principles and CI/CD-ready workflows.",
-  },
+
   // {
   //   id: "4",
   //   tag: "Web App",

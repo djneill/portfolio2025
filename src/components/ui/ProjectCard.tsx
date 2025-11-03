@@ -1,32 +1,48 @@
+import { useState } from "react";
 import type { Project } from "../../types";
-import Badge from "./Badge";
 import Button from "./Button";
+import Badge from "./Badge";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const languages = project.languages.split(", ");
+  const hasRepoLink = project.repoLink && project.repoLink.trim() !== "";
 
   return (
-    <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10">
+    <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-105">
       <div className="relative h-64 overflow-hidden bg-slate-900">
         <img
           src={project.img}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-contain transition-all duration-300"
         />
-        <div className="absolute top-4 left-4">
-          <Badge>{project.tag}</Badge>
-        </div>
       </div>
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+        <div className="flex justify-center mb-3">
+          <Badge>{project.tag}</Badge>
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors text-center">
           {project.title}
         </h3>
-        <p className="text-slate-400 mb-4 line-clamp-3">{project.description}</p>
+
+        <div className="mb-4">
+          <p className={`text-slate-400 ${!isExpanded ? 'line-clamp-3' : ''}`}>
+            {project.description}
+          </p>
+          {project.description.length > 150 && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-cyan-400 hover:text-cyan-300 text-sm mt-1 transition-colors"
+            >
+              {isExpanded ? "See less" : "See more"}
+            </button>
+          )}
+        </div>
 
         <div className="flex flex-wrap gap-2 mb-6">
           {languages.map((lang, index) => (
@@ -45,14 +61,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             size="sm"
             onClick={() => window.open(project.link, "_blank")}
           >
-            {project.linkText}
+            Live Demo
           </Button>
           <Button
             variant="outline"
             size="sm"
-            onClick={() => window.open(project.repoLink, "_blank")}
+            onClick={() => hasRepoLink && window.open(project.repoLink, "_blank")}
+            disabled={!hasRepoLink}
+            className={!hasRepoLink ? "opacity-50 cursor-not-allowed border-slate-600 text-slate-500 hover:bg-transparent hover:text-slate-500" : ""}
           >
-            Source Code
+            {hasRepoLink ? "GitHub" : "Private Repo"}
           </Button>
         </div>
       </div>

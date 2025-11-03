@@ -1,16 +1,17 @@
 import SectionTitle from "../ui/SectionTitle";
-import Badge from "../ui/Badge";
 
 export default function About() {
   const techStack = [
-    "JavaScript",
-    "TypeScript",
-    "C#",
-    ".NET",
-    "React",
-    "Next.js",
-    "Node.js",
-    "PostgreSQL",
+    { name: "JavaScript", icon: "js" },
+    { name: "TypeScript", icon: "ts" },
+    { name: "C#", icon: "cs" },
+    { name: ".NET", icon: "dotnet" },
+    { name: "React", icon: "react" },
+    { name: "Next.js", icon: "next" },
+    { name: "Node.js", icon: "nodejs" },
+    { name: "MongoDB", icon: "mongodb" },
+    { name: "Tailwind CSS", icon: "tailwind" },
+    { name: "Git", icon: "git" },
   ];
 
   return (
@@ -34,7 +35,7 @@ export default function About() {
           {/* About Text */}
           <div>
             <h3 className="text-3xl font-bold text-white mb-6">
-              Hi, I'm John Doe
+              Hi, I'm DJ Neill
             </h3>
             <div className="space-y-4 text-slate-400 text-lg">
               <p>
@@ -55,9 +56,25 @@ export default function About() {
               <h4 className="text-xl font-semibold text-white mb-4">
                 My Tech Stack
               </h4>
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-4 lg:grid-cols-7 gap-4">
                 {techStack.map((tech, index) => (
-                  <Badge key={index}>{tech}</Badge>
+                  <div
+                    key={index}
+                    className="flex flex-col items-center gap-2 group"
+                  >
+                    <div className="relative transition-transform duration-300 group-hover:scale-110">
+                      {/* Glow effect on hover */}
+                      <div className="absolute inset-0 bg-cyan-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
+                      <img
+                        src={`https://skillicons.dev/icons?i=${tech.icon}&theme=dark`}
+                        alt={tech.name}
+                        className="w-12 h-12 relative z-10"
+                      />
+                    </div>
+                    <span className="text-xs text-slate-400 group-hover:text-cyan-400 transition-colors duration-300 text-center">
+                      {tech.name}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
