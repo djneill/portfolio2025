@@ -13,8 +13,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const hasRepoLink = project.repoLink && project.repoLink.trim() !== "";
 
   return (
-    <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-105">
-      <div className="relative h-64 overflow-hidden bg-slate-900">
+    <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-105 h-full flex flex-col">
+      <div className="relative h-64 overflow-hidden bg-slate-900 flex-shrink-0">
         <img
           src={project.img}
           alt={project.title}
@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         />
       </div>
 
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <div className="flex justify-center mb-3">
           <Badge>{project.tag}</Badge>
         </div>
@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.title}
         </h3>
 
-        <div className="mb-4">
+        <div className="mb-4 flex-grow">
           <p className={`text-slate-400 ${!isExpanded ? 'line-clamp-3' : ''}`}>
             {project.description}
           </p>
@@ -55,7 +55,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-auto">
           <Button
             variant="primary"
             size="sm"
