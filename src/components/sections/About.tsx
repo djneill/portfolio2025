@@ -25,7 +25,7 @@ export default function About() {
             <div className="absolute inset-0 bg-linear-to-r from-cyan-500 to-blue-500 rounded-2xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
             <div className="relative bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
               <img
-                src="/images/conferences/headShot.webp"
+                src="/images/conferences/headshot.webp"
                 alt="Profile"
                 className="w-auto h-auto"
               />

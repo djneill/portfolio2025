@@ -6,7 +6,10 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)]"></div>
@@ -30,7 +33,7 @@ export default function Hero() {
         </h2>
 
         <p className="text-xl md:text-2xl text-slate-400 mb-16 max-w-3xl mx-auto">
-          Crafting innovative and robust ideas from front to back
+          Turning ideas into seamless digital experiences
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">

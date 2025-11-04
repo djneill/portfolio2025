@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 import SectionTitle from "../ui/SectionTitle";
 import Button from "../ui/Button";
 import { socials } from "../../data/socials";
@@ -8,6 +9,11 @@ type FormStatus = "idle" | "pending" | "ok" | "error";
 
 export default function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");
+
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -47,8 +53,16 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-6 text-center md:text-left">Get in Touch</h3>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            variants={fadeUpVariants}
+          >
+            <h3 className="text-2xl font-bold text-white mb-6 text-center md:text-left">
+              Get in Touch
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
               {socials.map((social) => (
                 <a
@@ -71,10 +85,16 @@ export default function Contact() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            variants={fadeUpVariants}
+          >
             <form
               name="contact"
               method="POST"
@@ -150,7 +170,7 @@ export default function Contact() {
                 {status === "pending" ? "Sending..." : "Send Message"}
               </Button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

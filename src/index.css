@@ -30,7 +30,7 @@ html {
   position: absolute;
   top: -5px;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -32px; /* Half of w-16 (64px) to center */
   z-index: 20;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -40,19 +40,8 @@ html {
   padding: 10px;
   padding-bottom: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   display: inline-block;
   max-width: 320px;
-}
-
-.polaroid-wrapper:hover .polaroid {
-  transform: rotate(0deg) scale(1.05) translateY(-5px) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(6, 182, 212, 0.3);
-  z-index: 10;
-}
-
-.polaroid-wrapper:hover .thumbtack {
-  transform: translateX(-50%) translateY(-5px);
 }
 
 .polaroid-inner {
