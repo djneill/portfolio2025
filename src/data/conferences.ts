@@ -55,4 +55,22 @@ export const conferencePhotos: ConferencePhoto[] = [
     caption: "Commit Your Code 2024",
     event: "CYC 2024",
   },
+  {
+    id: "10",
+    image: "/images/conferences/fowling.jpg",
+    caption: "Commit Your Code 2025 Social Event",
+    event: "CYC 2024",
+  },
+  {
+    id: "11",
+    image: "/images/conferences/fowling2.jpg",
+    caption: "Fowling Warehouse Fun CYC 25",
+    event: "CYC 2024",
+  },
+  {
+    id: "12",
+    image: "/images/conferences/nick.jpg",
+    caption: "Nick Consentino",
+    event: "He's taller than he looks",
+  },
 ];
