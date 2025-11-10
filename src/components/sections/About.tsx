@@ -26,7 +26,7 @@ export default function About() {
             <div className="relative bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
               <img
                 src="/images/conferences/headshot.webp"
-                alt="Profile"
+                alt="Profile Picture"
                 className="w-auto h-auto"
               />
             </div>

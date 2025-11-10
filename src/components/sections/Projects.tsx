@@ -28,7 +28,7 @@ function Tilt3DCard({ project, index }: { project: Project; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center center"],
+    offset: ["start 0.7", "center center"],
   });
 
   const isLeft = index % 2 === 0;
