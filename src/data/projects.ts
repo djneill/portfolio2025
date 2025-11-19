@@ -38,6 +38,18 @@ export const projects: Project[] = [
       "808 Island Grinds is a website designed to showcase the food and services provided by our client's business. It includes information about the company, services offered, contact details, and a contact form for potential customers to get in touch.",
   },
   {
+    id: "3",
+    tag: "Website",
+    title: "Italiano's Pizza, Pasta & Subs",
+    img: "/images/work_images/italianos.webp",
+    languages: "React, Typescript, Tailwind CSS, Vite",
+    link: "https://italianos.netlify.app/",
+    repoLink: "",
+    linkText: "italianos.netlify.app",
+    description:
+      "Italiano's Pizza, Pasta & Subs is a website designed to showcase the food and services provided by our client's business. It includes information about the company, services offered, contact details, and a contact form for potential customers to get in touch.",
+  },
+  {
     id: "4",
     tag: "Website",
     title: "Tacos Los Troncos",
