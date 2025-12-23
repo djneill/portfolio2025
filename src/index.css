@@ -30,7 +30,8 @@ html {
   position: absolute;
   top: -5px;
   left: 50%;
-  margin-left: -32px; /* Half of w-16 (64px) to center */
+  margin-left: -32px;
+  /* Half of w-16 (64px) to center */
   z-index: 20;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -173,82 +174,102 @@ html {
     clip: rect(31px, 9999px, 94px, 0);
     transform: skew(0.2deg);
   }
+
   5% {
     clip: rect(70px, 9999px, 71px, 0);
     transform: skew(0.8deg);
   }
+
   10% {
     clip: rect(10px, 9999px, 100px, 0);
     transform: skew(0.5deg);
   }
+
   15% {
     clip: rect(85px, 9999px, 40px, 0);
     transform: skew(0.3deg);
   }
+
   20% {
     clip: rect(60px, 9999px, 15px, 0);
     transform: skew(0.9deg);
   }
+
   25% {
     clip: rect(20px, 9999px, 80px, 0);
     transform: skew(0.4deg);
   }
+
   30% {
     clip: rect(90px, 9999px, 55px, 0);
     transform: skew(0.7deg);
   }
+
   35% {
     clip: rect(5px, 9999px, 95px, 0);
     transform: skew(0.2deg);
   }
+
   40% {
     clip: rect(75px, 9999px, 25px, 0);
     transform: skew(0.6deg);
   }
+
   45% {
     clip: rect(35px, 9999px, 65px, 0);
     transform: skew(0.3deg);
   }
+
   50% {
     clip: rect(50px, 9999px, 50px, 0);
     transform: skew(0.8deg);
   }
+
   55% {
     clip: rect(15px, 9999px, 85px, 0);
     transform: skew(0.5deg);
   }
+
   60% {
     clip: rect(80px, 9999px, 20px, 0);
     transform: skew(0.4deg);
   }
+
   65% {
     clip: rect(40px, 9999px, 60px, 0);
     transform: skew(0.9deg);
   }
+
   70% {
     clip: rect(95px, 9999px, 5px, 0);
     transform: skew(0.2deg);
   }
+
   75% {
     clip: rect(25px, 9999px, 75px, 0);
     transform: skew(0.7deg);
   }
+
   80% {
     clip: rect(65px, 9999px, 35px, 0);
     transform: skew(0.3deg);
   }
+
   85% {
     clip: rect(45px, 9999px, 55px, 0);
     transform: skew(0.6deg);
   }
+
   90% {
     clip: rect(12px, 9999px, 88px, 0);
     transform: skew(0.4deg);
   }
+
   95% {
     clip: rect(78px, 9999px, 22px, 0);
     transform: skew(0.8deg);
   }
+
   100% {
     clip: rect(33px, 9999px, 67px, 0);
     transform: skew(0.5deg);
@@ -260,82 +281,102 @@ html {
     clip: rect(65px, 9999px, 100px, 0);
     transform: skew(0.4deg);
   }
+
   5% {
     clip: rect(25px, 9999px, 33px, 0);
     transform: skew(0.9deg);
   }
+
   10% {
     clip: rect(75px, 9999px, 11px, 0);
     transform: skew(0.3deg);
   }
+
   15% {
     clip: rect(5px, 9999px, 90px, 0);
     transform: skew(0.7deg);
   }
+
   20% {
     clip: rect(88px, 9999px, 45px, 0);
     transform: skew(0.2deg);
   }
+
   25% {
     clip: rect(40px, 9999px, 70px, 0);
     transform: skew(0.6deg);
   }
+
   30% {
     clip: rect(18px, 9999px, 82px, 0);
     transform: skew(0.5deg);
   }
+
   35% {
     clip: rect(92px, 9999px, 28px, 0);
     transform: skew(0.8deg);
   }
+
   40% {
     clip: rect(50px, 9999px, 50px, 0);
     transform: skew(0.3deg);
   }
+
   45% {
     clip: rect(8px, 9999px, 95px, 0);
     transform: skew(0.9deg);
   }
+
   50% {
     clip: rect(72px, 9999px, 38px, 0);
     transform: skew(0.4deg);
   }
+
   55% {
     clip: rect(30px, 9999px, 60px, 0);
     transform: skew(0.7deg);
   }
+
   60% {
     clip: rect(98px, 9999px, 2px, 0);
     transform: skew(0.2deg);
   }
+
   65% {
     clip: rect(55px, 9999px, 48px, 0);
     transform: skew(0.6deg);
   }
+
   70% {
     clip: rect(15px, 9999px, 78px, 0);
     transform: skew(0.5deg);
   }
+
   75% {
     clip: rect(82px, 9999px, 18px, 0);
     transform: skew(0.8deg);
   }
+
   80% {
     clip: rect(42px, 9999px, 58px, 0);
     transform: skew(0.3deg);
   }
+
   85% {
     clip: rect(3px, 9999px, 93px, 0);
     transform: skew(0.9deg);
   }
+
   90% {
     clip: rect(68px, 9999px, 32px, 0);
     transform: skew(0.4deg);
   }
+
   95% {
     clip: rect(22px, 9999px, 72px, 0);
     transform: skew(0.7deg);
   }
+
   100% {
     clip: rect(86px, 9999px, 14px, 0);
     transform: skew(0.2deg);
@@ -346,33 +387,43 @@ html {
   0% {
     transform: skew(0deg, 0deg);
   }
+
   10% {
     transform: skew(-1deg, 0deg);
   }
+
   20% {
     transform: skew(0.5deg, 0deg);
   }
+
   30% {
     transform: skew(-0.5deg, 0deg);
   }
+
   40% {
     transform: skew(1deg, 0deg);
   }
+
   50% {
     transform: skew(0deg, 0deg);
   }
+
   60% {
     transform: skew(-0.8deg, 0deg);
   }
+
   70% {
     transform: skew(0.3deg, 0deg);
   }
+
   80% {
     transform: skew(-0.3deg, 0deg);
   }
+
   90% {
     transform: skew(0.6deg, 0deg);
   }
+
   100% {
     transform: skew(0deg, 0deg);
   }
@@ -399,9 +450,11 @@ html {
     opacity: 0;
     transform: translateY(50px) scale(0.8);
   }
+
   60% {
     transform: translateY(-10px) scale(1.05);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -409,9 +462,12 @@ html {
 }
 
 @keyframes float-hover {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -452,7 +508,15 @@ html {
 }
 
 @keyframes neon-flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
     text-shadow:
       0 0 10px #06b6d4,
       0 0 20px #06b6d4,
@@ -461,11 +525,109 @@ html {
       0 0 120px #06b6d4,
       0 0 160px #06b6d4;
   }
-  20%, 24%, 55% {
+
+  20%,
+  24%,
+  55% {
     text-shadow:
       0 0 5px #06b6d4,
       0 0 10px #06b6d4,
       0 0 20px #06b6d4,
       0 0 40px #06b6d4;
   }
+}
+
+/* Floating Shapes Animations */
+@keyframes slow-float {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  33% {
+    transform: translate(10px, -20px) rotate(5deg);
+  }
+
+  66% {
+    transform: translate(-15px, 15px) rotate(-10deg);
+  }
+}
+
+.float-slow {
+  animation: slow-float 15s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: slow-float 12s ease-in-out infinite reverse;
+}
+
+.float-fast {
+  animation: slow-float 10s ease-in-out infinite;
+}
+
+/* Terminal Window Styles */
+.terminal-window {
+  background-color: rgba(15, 23, 42, 0.9);
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-color: rgba(51, 65, 85, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.terminal-header {
+  background-color: rgba(30, 41, 59, 0.8);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom-width: 1px;
+  border-color: rgba(51, 65, 85, 0.3);
+}
+
+.terminal-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.terminal-content {
+  padding: 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  text-align: left;
+}
+
+.code-keyword {
+  color: #c084fc;
+}
+
+.code-variable {
+  color: #60a5fa;
+}
+
+.code-string {
+  color: #34d399;
+}
+
+.code-number {
+  color: #fbbf24;
+}
+
+.code-comment {
+  color: #64748b;
+}
+
+.code-function {
+  color: #fbbf24;
+}
+
+.code-boolean {
+  color: #f472b6;
 }
