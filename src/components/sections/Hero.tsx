@@ -2,48 +2,48 @@ import { useEffect, useRef, useState } from "react";
 import Button from "../ui/Button";
 import { heroData } from "../../data/hero";
 
-//TODO: Fix toast on mobile, scroll mouse center, floating icons on mobile & desktop position
+//TODO: Fix toast on mobile, scroll mouse center, floating icon positions on mobile & desktop pickleball position
 const FloatingShapes = () => {
   const shapes = [
     {
       type: "{ }",
-      className:
-        "top-10 left-10 sm:top-20 sm:left-20 text-cyan-400 text-6xl float-slow",
+      className: "top-[10%] left-[5%] text-cyan-400 text-6xl float-slow",
     },
     {
       type: "< >",
-      className: "top-20 right-70 text-blue-400 text-7xl float-medium",
+      className:
+        "top-[20%] sm:top-[1%] right-[10%] text-blue-400 text-7xl float-medium",
     },
     {
       type: "[ ]",
-      className: "top-1/4 right-10 text-purple-400 text-5xl float-fast",
+      className: "bottom-[25%] left-[10%] text-purple-400 text-5xl float-fast",
     },
     {
       type: "( )",
-      className: "bottom-1/3 right-20 text-indigo-400 text-6xl float-slow",
+      className: "top-[45%] right-[4%] text-indigo-400 text-6xl float-slow",
     },
     // Icon images
     {
       type: "image",
-      className: "top-1/2 left-[15%] float-medium",
+      className: "top-[35%] left-[18%] float-medium",
       image: "/images/hero/guitar.png",
       alt: "guitar",
     },
     {
       type: "image",
-      className: "bottom-[55%] right-[20%] float-slow",
+      className: "bottom-[60%] right-[45%] float-slow",
       image: "/images/hero/electric-guitar-music-instrument.png",
       alt: "Electric guitar",
     },
     {
       type: "image",
-      className: "bottom-[10%] left-[10%] float-fast",
+      className: "bottom-[12%] right-[25%] float-fast",
       image: "/images/hero/game.png",
       alt: "Game controller",
     },
     {
       type: "image",
-      className: "bottom-[15%] left-[30%] float-medium",
+      className: "bottom-[30%] left-[40%] float-medium",
       image: "/images/hero/pickleball.png",
       alt: "Pickleball paddle",
     },
@@ -99,7 +99,7 @@ const Toast = ({
 
   return (
     <div
-      className={`fixed bottom-8 right-8 bg-red-500/90 backdrop-blur-md text-white px-6 py-4 rounded-lg shadow-2xl border border-red-400 z-50 transition-all duration-300 ${
+      className={`fixed bottom-24 sm:bottom-8 right-4 sm:right-8 bg-red-500/90 backdrop-blur-md text-white px-6 py-4 rounded-lg shadow-2xl border border-red-400 z-50 transition-all duration-300 ${
         show ? "translate-x-0 opacity-100" : "translate-x-96 opacity-0"
       }`}
     >
@@ -124,10 +124,10 @@ const CodeTerminal = () => {
       setShowToast(true);
       setTimeout(() => {
         setCoffee(false);
-      }, 100);
+      }, 300);
       setTimeout(() => {
         setCoffee(true);
-      }, 3100);
+      }, 3000);
     }
   };
 
@@ -139,7 +139,7 @@ const CodeTerminal = () => {
         onClose={() => setShowToast(false)}
       />
       <div
-        className="terminal-window max-w-2xl mx-auto mt-16 reveal-text"
+        className="terminal-window max-w-2xl reveal-text"
         style={{ animationDelay: "1s" }}
       >
         <div className="terminal-header">
@@ -151,7 +151,8 @@ const CodeTerminal = () => {
         <div className="terminal-content">
           <div>
             <span className="code-keyword">const</span>{" "}
-            <span className="code-variable">dev</span> = {"{"}
+            <span className="code-variable">dev:</span>
+            <span className="code-variable"> Developer</span> = {"{"}
           </div>
           <div className="pl-4">
             <span className="code-variable">name</span>:{" "}
@@ -181,13 +182,13 @@ const CodeTerminal = () => {
             <span className="code-variable">currentMood</span>:{" "}
             <span className="code-string">"{personality.currentMood}"</span>,
           </div>
-          <div className="pl-4">
+          {/* <div className="pl-4">
             <span className="code-variable">debugMode</span>:{" "}
             <span className="code-boolean">
               {String(personality.debugMode)}
             </span>
             ,
-          </div>
+          </div> */}
           <div className="pl-4">
             <span className="code-variable">deployedOnFriday</span>:{" "}
             <span className="code-boolean">
@@ -249,7 +250,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={heroRef}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-16 pb-20 bg-[#040d36]"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-2 pb-20 bg-[#040d36]"
     >
       <FloatingShapes />
 
@@ -262,37 +263,48 @@ export default function Hero() {
       ></div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center py-10 rounded-3xl">
-        {/* 3D Layered Shadow Name with stagger reveal */}
-        <div className="mb-6">
-          <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-black text-white shadow-3d reveal-text cursor-default"
-            style={{ animationDelay: "0.2s" }}
-          >
-            {heroData.name}
-          </h1>
+      <div className="relative z-10 max-w-7xl mx-auto py-10">
+        {/* Two Column Layout - Only text and code */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 place-items-center mb-12">
+          {/* Left Column - Name and Description */}
+          <div className="text-center lg:text-left place-items-center">
+            <div className="mb-6">
+              <h1
+                className="text-5xl md:text-6xl lg:text-7xl font-black text-white shadow-3d reveal-text cursor-default"
+                style={{ animationDelay: "0.2s" }}
+              >
+                {heroData.name}
+              </h1>
+            </div>
+
+            <h2
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 reveal-text text-center"
+              style={{ animationDelay: "0.4s" }}
+            >
+              Full-Stack Software
+              <br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 hover:neon-glow transition-all duration-500 cursor-default">
+                {heroData.title.split(" ").pop()}
+              </span>
+            </h2>
+
+            <p
+              className="text-xl md:text-2xl text-slate-400 reveal-text text-center"
+              style={{ animationDelay: "0.6s" }}
+            >
+              {heroData.description}
+            </p>
+          </div>
+
+          {/* Right Column - Code Terminal */}
+          <div className="flex justify-center lg:justify-end">
+            <CodeTerminal />
+          </div>
         </div>
 
-        <h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 reveal-text"
-          style={{ animationDelay: "0.4s" }}
-        >
-          Full-Stack Software
-          <br />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 hover:neon-glow transition-all duration-500 cursor-default">
-            {heroData.title.split(" ").pop()}
-          </span>
-        </h2>
-
-        <p
-          className="text-xl md:text-2xl text-slate-400 mb-16 max-w-3xl mx-auto reveal-text"
-          style={{ animationDelay: "0.6s" }}
-        >
-          {heroData.description}
-        </p>
-
+        {/* Centered Buttons - Below the grid */}
         <div
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center reveal-text mb-12 "
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center reveal-text"
           style={{ animationDelay: "0.8s" }}
         >
           <Button
@@ -313,20 +325,18 @@ export default function Hero() {
             Get In Touch
           </Button>
         </div>
+      </div>
 
-        <CodeTerminal />
-
-        {/* Improved Scroll indicator */}
-        <div
-          className="absolute -bottom-10 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer group"
-          onClick={() => scrollToSection("about")}
-        >
-          <span className="block text-slate-500 text-xs font-bold tracking-widest uppercase mb-4 opacity-0 group-hover:opacity-100 transition-opacity">
-            Scroll Down
-          </span>
-          <div className="w-6 h-10 border-2 border-cyan-500/30 rounded-full flex items-start justify-center p-1 group-hover:border-cyan-500 transition-colors">
-            <div className="w-1.5 h-3 bg-cyan-500 rounded-full"></div>
-          </div>
+      {/* Improved Scroll indicator */}
+      <div
+        className="absolute cursor-pointer bottom-8 sm:bottom-16 left-1/2 -translate-x-1/2 animate-bounce group place-items-center z-10"
+        onClick={() => scrollToSection("about")}
+      >
+        <span className="block text-slate-500 text-xs font-bold tracking-widest uppercase mb-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          Scroll Down
+        </span>
+        <div className="w-6 h-10 border-2 border-cyan-500/30 rounded-full flex items-start justify-center p-1 group-hover:border-cyan-500 transition-colors ">
+          <div className="w-1.5 h-3 bg-cyan-500 rounded-full"></div>
         </div>
       </div>
     </section>

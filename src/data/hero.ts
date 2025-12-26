@@ -5,9 +5,9 @@ export const heroData = {
     "Crafting high-performance, pixel-perfect digital experiences with modern web technologies.",
   personality: {
     name: "DJ Neill",
-    status: "Brewing ideas ☕",
+    status: "Brewing ideas",
     bugsFixed: 1024,
-    coffeeConsumed: "Infinity",
+    coffeeConsumed: "6",
     linesOfCode: 999999,
     codeQuality: "Chef's kiss",
     favoriteStack: ["React", ".NET"],
