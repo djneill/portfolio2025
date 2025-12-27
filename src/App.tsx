@@ -2,6 +2,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navigation from "./components/Navigation";
 import Hero from "./components/sections/Hero";
+import Testimonial from "./components/sections/Testimonial";
 import About from "./components/sections/About";
 import Clients from "./components/sections/Clients";
 import Conferences from "./components/sections/Conferences";
@@ -25,6 +26,7 @@ export default function App() {
       />
       <Navigation />
       <Hero />
+      <Testimonial />
       <About />
       <Clients />
       <Conferences />

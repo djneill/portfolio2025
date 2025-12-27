@@ -345,7 +345,7 @@ export default function Hero() {
       {/* Improved Scroll indicator */}
       <div
         className="absolute cursor-pointer bottom-8 sm:bottom-16 left-1/2 -translate-x-1/2 animate-bounce group place-items-center z-10"
-        onClick={() => scrollToSection("about")}
+        onClick={() => scrollToSection("testimonial")}
       >
         <span className="block text-slate-500 text-xs font-bold tracking-widest uppercase mb-4 opacity-0 group-hover:opacity-100 transition-opacity">
           Scroll Down
