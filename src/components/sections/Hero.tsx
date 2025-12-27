@@ -16,7 +16,8 @@ const FloatingShapes = () => {
     },
     {
       type: "[ ]",
-      className: "bottom-[25%] left-[10%] text-purple-400 text-5xl float-fast",
+      className:
+        "bottom-[22%] left-[10%] sm:bottom-[25%] sm:left-[10%] text-purple-400 text-5xl float-fast",
     },
     {
       type: "( )",
@@ -31,13 +32,15 @@ const FloatingShapes = () => {
     },
     {
       type: "image",
-      className: "bottom-[60%] right-[45%] float-slow",
+      className:
+        "bottom-[12%] right-[5%] sm:bottom-[60%] sm:right-[45%] float-slow",
       image: "/images/hero/electric-guitar-music-instrument.png",
       alt: "Electric guitar",
     },
     {
       type: "image",
-      className: "bottom-[12%] right-[25%] float-fast",
+      className:
+        "bottom-[60%] right-[45%] sm:bottom-[12%] sm:right-[25%] float-fast",
       image: "/images/hero/game.png",
       alt: "Game controller",
     },
@@ -134,7 +137,7 @@ const CodeTerminal = () => {
   return (
     <>
       <Toast
-        message="Coffee = false; System Failure!"
+        message="Coffee == false; System Failure!"
         show={showToast}
         onClose={() => setShowToast(false)}
       />
@@ -202,6 +205,7 @@ const CodeTerminal = () => {
           </div>
           <div className="pl-4 flex items-center gap-2">
             <span className="code-variable">coffee</span>:
+            <span className="code-boolean">{String(coffee)}</span>
             <button
               onClick={handleCoffeeToggle}
               className={`w-10 h-5 rounded-full transition-all duration-300 relative ${
@@ -217,7 +221,6 @@ const CodeTerminal = () => {
                 }`}
               />
             </button>
-            <span className="code-boolean">{String(coffee)}</span>
           </div>
           <div>{"};"}</div>
           <div className="mt-4">
@@ -241,6 +244,7 @@ const CodeTerminal = () => {
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
+  const [useCircuitBg, setUseCircuitBg] = useState(true);
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
@@ -250,8 +254,19 @@ export default function Hero() {
     <section
       id="hero"
       ref={heroRef}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-2 pb-20 bg-[#040d36]"
+      className={`min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-2 pb-20 ${
+        useCircuitBg ? "circuitBackground" : "svgBackground"
+      }`}
     >
+      {/* Background Toggle Button */}
+      <button
+        onClick={() => setUseCircuitBg(!useCircuitBg)}
+        className="absolute top-2 sm:top-4 right-4 z-50 px-4 py-2 bg-slate-800/80 backdrop-blur-sm border border-cyan-500/30 rounded-lg text-cyan-400 text-sm font-medium hover:bg-slate-700/80 hover:border-cyan-500 transition-all duration-300 shadow-lg"
+        title="Toggle background pattern"
+      >
+        {useCircuitBg ? "Geometric" : "Circuit board"}
+      </button>
+
       <FloatingShapes />
 
       {/* Central cyan/teal glow */}
