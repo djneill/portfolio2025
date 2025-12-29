@@ -46,10 +46,18 @@ export default function Contact() {
   return (
     <section id="contact" className="py-32 bg-slate-900/50">
       <div className="max-w-4xl mx-auto px-6">
-        <SectionTitle
-          title="Let's Build Something Together"
-          subtitle="Have a project in mind? Let's discuss how we can work together"
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          variants={fadeUpVariants}
+        >
+          <SectionTitle
+            title="Let's Build Something Together"
+            subtitle="Have a project in mind? Let's discuss how we can work together"
+          />
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}

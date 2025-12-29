@@ -1,66 +1,83 @@
 import { useState } from "react";
 import type { Project } from "../../types";
+import { FaTerminal, FaChevronDown, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import ProjectDeepDiveModal from "./ProjectDeepDiveModal";
 import Button from "./Button";
-import Badge from "./Badge";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isDeepDiveOpen, setIsDeepDiveOpen] = useState(false);
   const languages = project.languages.split(", ");
   const hasRepoLink = project.repoLink && project.repoLink.trim() !== "";
 
   return (
-    <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-105 h-full flex flex-col">
-      <div className="relative h-64 overflow-hidden bg-slate-900 flex-shrink-0">
+    <div className="group bg-[#0d1425] rounded-xl overflow-hidden border border-slate-800 transition-all duration-300 hover:border-cyan-500/30 flex flex-col h-full shadow-lg">
+      {/* Windows Style Header */}
+      <div className="bg-[#1a2333] px-4 py-2 flex items-center gap-4 border-b border-slate-800">
+        <div className="flex gap-1.5">
+          <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+          <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+          <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
+        </div>
+        <div className="flex-grow bg-[#0d1425] rounded-md h-6 flex items-center px-3 text-[10px] text-slate-500 font-mono overflow-hidden whitespace-nowrap">
+          {project.link.replace("https://", "").replace("www.", "")}
+        </div>
+      </div>
+
+      {/* Project Image */}
+      <div className="relative h-48 overflow-hidden bg-slate-900 flex-shrink-0 group-hover:scale-[1.02] transition-transform duration-500">
         <img
           src={project.img}
           alt={project.title}
-          className="w-full h-full object-contain transition-all duration-300"
+          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1425] to-transparent opacity-60" />
       </div>
 
+      {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
-        <div className="flex justify-center mb-3">
-          <Badge>{project.tag}</Badge>
+        <div className="flex justify-between items-start mb-2">
+          <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.2em]">
+            {project.tag}
+          </span>
         </div>
-        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors text-center">
+
+        <h3 className="text-xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors">
           {project.title}
         </h3>
 
-        <div className="mb-4 flex-grow">
-          <p className={`text-slate-400 ${!isExpanded ? 'line-clamp-3' : ''}`}>
+        <div className="mb-6 flex-grow">
+          <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
             {project.description}
           </p>
-          {project.description.length > 150 && (
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="text-cyan-400 hover:text-cyan-300 text-sm mt-1 transition-colors"
-            >
-              {isExpanded ? "See less" : "See more"}
-            </button>
-          )}
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="h-px bg-slate-800/50 w-full mb-6" />
+
+        {/* Tech Stack Tags */}
+        <div className="flex flex-wrap gap-2 mb-8">
           {languages.map((lang, index) => (
             <span
               key={index}
-              className="text-xs px-2 py-1 bg-slate-700/50 text-slate-300 rounded"
+              className="text-[10px] px-2 py-1 bg-slate-800/80 text-slate-400 border border-slate-700/50 rounded-md font-medium"
             >
               {lang.trim()}
             </span>
           ))}
         </div>
 
-        <div className="flex gap-3 mt-auto">
+        {/* Action Buttons */}
+        <div className="flex justify-between items-center gap-4 mb-4">
           <Button
             variant="primary"
             size="sm"
             onClick={() => window.open(project.link, "_blank")}
+            className="flex-1 flex items-center justify-center gap-2 cursor-pointer"
           >
+            <FaExternalLinkAlt size={12} />
             Live Demo
           </Button>
           <Button
@@ -68,12 +85,35 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             size="sm"
             onClick={() => hasRepoLink && window.open(project.repoLink, "_blank")}
             disabled={!hasRepoLink}
-            className={!hasRepoLink ? "opacity-50 cursor-not-allowed border-slate-600 text-slate-500 hover:bg-transparent hover:text-slate-500" : ""}
+            className={`flex-1 flex items-center justify-center gap-2 ${!hasRepoLink
+              ? "opacity-50 cursor-not-allowed border-slate-700 text-slate-500 hover:bg-transparent hover:text-slate-500 hover:scale-100"
+              : "cursor-pointer"
+              }`}
           >
-            {hasRepoLink ? "GitHub" : "Private Repo"}
+            <FaGithub size={14} />
+            {hasRepoLink ? "GitHub" : "Private"}
           </Button>
         </div>
+
+        {/* Technical Deep Dive Button */}
+        {project.deepDive && (
+          <button
+            onClick={() => setIsDeepDiveOpen(true)}
+            className="w-full cursor-pointer group/btn py-3 px-4 rounded-lg bg-[#141d2e] border border-slate-700/50 text-slate-300 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#1a2333] hover:border-cyan-500/30 hover:text-white transition-all duration-300"
+          >
+            <FaTerminal className="text-cyan-500 group-hover/btn:scale-110 transition-transform " />
+            Technical Deep Dive
+            <FaChevronDown className="text-slate-500 group-hover/btn:translate-y-0.5 transition-transform" size={10} />
+          </button>
+        )}
       </div>
+
+      <ProjectDeepDiveModal
+        isOpen={isDeepDiveOpen}
+        onClose={() => setIsDeepDiveOpen(false)}
+        deepDive={project.deepDive}
+        projectTitle={project.title}
+      />
     </div>
   );
 }
