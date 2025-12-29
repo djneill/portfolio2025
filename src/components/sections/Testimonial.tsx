@@ -10,19 +10,78 @@ export default function Testimonial() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row items-center gap-12 bg-slate-800/40 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-slate-700/50 shadow-2xl"
         >
           {/* Polaroid Image */}
           <div className="shrink-0 w-full md:w-1/3 flex justify-center">
-            <div className="polaroid-wrapper -rotate-2 hover:rotate-0 transition-transform duration-500">
-              <img
-                src="/images/blueThumbTack.png"
-                alt="thumbtack"
-                className="thumbtack w-12"
-              />
-              <div className="polaroid">
+            <motion.div
+              className="polaroid-wrapper"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              whileHover="hover"
+            >
+              {/* Thumbtack */}
+              <motion.div
+                className="thumbtack"
+                initial={{ scale: 0, rotate: -180 }}
+                whileInView={{
+                  scale: 1,
+                  rotate: 0,
+                  transition: {
+                    duration: 0.5,
+                    delay: 0.2,
+                    ease: "backOut",
+                  },
+                }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                }}
+                variants={{
+                  hover: {
+                    y: -5,
+                    scale: 1.05,
+                  },
+                }}
+              >
+                <img
+                  src="/images/blueThumbTack.png"
+                  alt="thumbtack"
+                  className="w-12"
+                />
+              </motion.div>
+
+              {/* Polaroid */}
+              <motion.div
+                className="polaroid"
+                style={{
+                  rotate: -2,
+                }}
+                variants={{
+                  hover: {
+                    rotate: 0,
+                    scale: 1.05,
+                    y: -5,
+                    boxShadow:
+                      "0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(6, 182, 212, 0.3)",
+                    zIndex: 10,
+                  },
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                }}
+              >
                 <div className="polaroid-inner">
                   <div className="polaroid-image">
                     <img
@@ -35,8 +94,8 @@ export default function Testimonial() {
                     Dallas Devs 2025
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
           {/* Testimonial Content */}

@@ -1,6 +1,11 @@
 import { useState } from "react";
 import type { Project } from "../../types";
-import { FaTerminal, FaChevronDown, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import {
+  FaTerminal,
+  FaChevronDown,
+  FaExternalLinkAlt,
+  FaGithub,
+} from "react-icons/fa";
 import ProjectDeepDiveModal from "./ProjectDeepDiveModal";
 import Button from "./Button";
 
@@ -22,23 +27,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
           <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
         </div>
-        <div className="flex-grow bg-[#0d1425] rounded-md h-6 flex items-center px-3 text-[10px] text-slate-500 font-mono overflow-hidden whitespace-nowrap">
+        <div className="grow bg-[#0d1425] rounded-md h-6 flex items-center px-3 text-[10px] text-slate-500 font-mono overflow-hidden whitespace-nowrap">
           {project.link.replace("https://", "").replace("www.", "")}
         </div>
       </div>
 
       {/* Project Image */}
-      <div className="relative h-48 overflow-hidden bg-slate-900 flex-shrink-0 group-hover:scale-[1.02] transition-transform duration-500">
+      <div className="relative h-48 overflow-hidden bg-slate-900 shrink-0 group-hover:scale-[1.02] transition-transform duration-500">
         <img
           src={project.img}
           alt={project.title}
           className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1425] to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0d1425] to-transparent opacity-60" />
       </div>
 
       {/* Content */}
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col grow">
         <div className="flex justify-between items-start mb-2">
           <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.2em]">
             {project.tag}
@@ -49,7 +54,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.title}
         </h3>
 
-        <div className="mb-6 flex-grow">
+        <div className="mb-6 grow">
           <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
             {project.description}
           </p>
@@ -78,17 +83,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className="flex-1 flex items-center justify-center gap-2 cursor-pointer"
           >
             <FaExternalLinkAlt size={12} />
-            Live Demo
+            Demo
           </Button>
           <Button
             variant="outline"
             size="sm"
-            onClick={() => hasRepoLink && window.open(project.repoLink, "_blank")}
+            onClick={() =>
+              hasRepoLink && window.open(project.repoLink, "_blank")
+            }
             disabled={!hasRepoLink}
-            className={`flex-1 flex items-center justify-center gap-2 ${!hasRepoLink
-              ? "opacity-50 cursor-not-allowed border-slate-700 text-slate-500 hover:bg-transparent hover:text-slate-500 hover:scale-100"
-              : "cursor-pointer"
-              }`}
+            className={`flex-1 flex items-center justify-center gap-2 ${
+              !hasRepoLink
+                ? "opacity-50 cursor-not-allowed border-slate-700 text-slate-500 hover:bg-transparent hover:text-slate-500 hover:scale-100"
+                : "cursor-pointer"
+            }`}
           >
             <FaGithub size={14} />
             {hasRepoLink ? "GitHub" : "Private"}
@@ -103,7 +111,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             <FaTerminal className="text-cyan-500 group-hover/btn:scale-110 transition-transform " />
             Technical Deep Dive
-            <FaChevronDown className="text-slate-500 group-hover/btn:translate-y-0.5 transition-transform" size={10} />
+            <FaChevronDown
+              className="text-slate-500 group-hover/btn:translate-y-0.5 transition-transform"
+              size={10}
+            />
           </button>
         )}
       </div>
