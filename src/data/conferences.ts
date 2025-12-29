@@ -19,24 +19,24 @@ export const conferencePhotos: ConferencePhoto[] = [
     caption: "The Goats - Danny Thompson & Dennis Garcia",
     event: "CYC 2024",
   },
-  {
-    id: "4",
-    image: "/images/conferences/socialhour.jpg",
-    caption: "Social Hour @ Legacy Hall",
-    event: "CYC 2024",
-  },
-  {
-    id: "5",
-    image: "/images/conferences/lunchmeet.jpg",
-    caption: "Lunch Meet-Up",
-    event: "CYC 2025",
-  },
-  {
-    id: "6",
-    image: "/images/conferences/truckyard.jpg",
-    caption: "Meet-Up @ Truck Yard",
-    event: "CYC 2025",
-  },
+  // {
+  //   id: "4",
+  //   image: "/images/conferences/socialhour.jpg",
+  //   caption: "Social Hour @ Legacy Hall",
+  //   event: "CYC 2024",
+  // },
+  // {
+  //   id: "5",
+  //   image: "/images/conferences/lunchmeet.jpg",
+  //   caption: "Lunch Meet-Up",
+  //   event: "CYC 2025",
+  // },
+  // {
+  //   id: "6",
+  //   image: "/images/conferences/truckyard.jpg",
+  //   caption: "Meet-Up @ Truck Yard",
+  //   event: "CYC 2025",
+  // },
   {
     id: "7",
     image: "/images/conferences/pickleball.jpg",
@@ -69,8 +69,14 @@ export const conferencePhotos: ConferencePhoto[] = [
   },
   {
     id: "12",
-    image: "/images/conferences/nick.jpg",
-    caption: "Nick Consentino",
-    event: "He's taller than he looks",
+    image: "/images/conferences/pickleballself.jpg",
+    caption: "Pickleball Kingdom CYC 24",
+    event: "CYC 2024",
   },
+  // {
+  //   id: "12",
+  //   image: "/images/conferences/nick.jpg",
+  //   caption: "Nick Consentino",
+  //   event: "He's taller than he looks",
+  // },
 ];

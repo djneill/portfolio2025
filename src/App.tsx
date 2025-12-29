@@ -6,6 +6,7 @@ import Testimonial from "./components/sections/Testimonial";
 import About from "./components/sections/About";
 import Clients from "./components/sections/Clients";
 import Conferences from "./components/sections/Conferences";
+import GlobalScope from "./components/sections/GlobalScope";
 import Projects from "./components/sections/Projects";
 import ConsultantProcess from "./components/sections/ConsultantProcess";
 import Contact from "./components/sections/Contact";
@@ -30,6 +31,7 @@ export default function App() {
       <Testimonial />
       <About />
       <Clients />
+      <GlobalScope />
       <Conferences />
       <Projects />
       <ConsultantProcess />

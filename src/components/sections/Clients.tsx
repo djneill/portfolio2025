@@ -16,8 +16,8 @@ export default function Clients() {
         {/* Horizontal scrolling container */}
         <div className="relative">
           {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-800/30 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-800/30 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-slate-800/30 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-slate-800/30 to-transparent z-10 pointer-events-none"></div>
 
           {/* Scrolling logos - now supports user scrolling */}
           <div className="overflow-x-auto scrollbar-hide scroll-smooth">
