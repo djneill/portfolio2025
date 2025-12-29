@@ -7,6 +7,7 @@ import About from "./components/sections/About";
 import Clients from "./components/sections/Clients";
 import Conferences from "./components/sections/Conferences";
 import Projects from "./components/sections/Projects";
+import ConsultantProcess from "./components/sections/ConsultantProcess";
 import Contact from "./components/sections/Contact";
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
       <Clients />
       <Conferences />
       <Projects />
+      <ConsultantProcess />
       <Contact />
 
       {/* Footer */}

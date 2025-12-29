@@ -7,7 +7,7 @@ export const heroData = {
     name: "DJ Neill",
     status: "Brewing ideas",
     bugsFixed: 1024,
-    coffeeConsumed: "6",
+    coffeeConsumed: "Infinity",
     linesOfCode: 999999,
     codeQuality: "Chef's kiss",
     favoriteStack: ["React", ".NET"],
