@@ -1,3 +1,16 @@
+export interface DeepDiveStep {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+export interface ProjectDeepDive {
+  challenge: string;
+  tradeOff: string;
+  decision: string;
+  why: string;
+}
+
 export interface Project {
   id: string;
   tag: string;
@@ -8,6 +21,7 @@ export interface Project {
   repoLink: string;
   linkText: string;
   description: string;
+  deepDive?: ProjectDeepDive;
 }
 
 export interface Client {
