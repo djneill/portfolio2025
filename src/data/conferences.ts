@@ -70,8 +70,8 @@ export const conferencePhotos: ConferencePhoto[] = [
   {
     id: "12",
     image: "/images/conferences/pickleballself.jpg",
-    caption: "Pickleball Kingdom CYC 24",
-    event: "CYC 2024",
+    caption: "Pickleball Kingdom CYC 25",
+    event: "CYC 2025",
   },
   // {
   //   id: "12",
