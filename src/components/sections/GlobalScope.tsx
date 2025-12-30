@@ -6,10 +6,17 @@ export default function GlobalScope() {
   return (
     <section id="global-scope" className="py-32 bg-slate-900/50">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
-        <SectionTitle
-          title="Localhost: Earth"
-          subtitle="This is my 'Global Scope'. A collection of moments spent building the social infrastructure that makes tech worth it. No compilers, just community."
-        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <SectionTitle
+            title="Localhost: Earth"
+            subtitle="This is my 'Global Scope'. A collection of moments spent building the social infrastructure that makes tech worth it. No compilers, just community."
+          />
+        </motion.div>
 
         <div className="space-y-24 md:space-y-32">
           {globalScopeHighlights.map((item, index) => (
@@ -19,9 +26,8 @@ export default function GlobalScope() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`flex flex-col ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } items-center gap-12 md:gap-24`}
+              className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                } items-center gap-12 md:gap-24`}
             >
               {/* Image Side */}
               <div className="flex-1 w-full">

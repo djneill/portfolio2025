@@ -12,10 +12,17 @@ export default function Conferences() {
   return (
     <section id="conferences" className="py-32 bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionTitle
-          title="Conferences & Meetups"
-          subtitle="Sharing knowledge and connecting with the community"
-        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <SectionTitle
+            title="Conferences & Meetups"
+            subtitle="Sharing knowledge and connecting with the community"
+          />
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {conferencePhotos.map((photo, index) => (
