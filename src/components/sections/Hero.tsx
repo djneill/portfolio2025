@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import Button from "../ui/Button";
 import { heroData } from "../../data/hero";
 
-//TODO: Fix toast on mobile, scroll mouse center, floating icon positions on mobile & desktop pickleball position
 const FloatingShapes = () => {
   const shapes = [
     {
@@ -102,8 +101,10 @@ const Toast = ({
 
   return (
     <div
-      className={`fixed bottom-24 sm:bottom-8 right-4 sm:right-8 bg-red-500/90 backdrop-blur-md text-white px-6 py-4 rounded-lg shadow-2xl border border-red-400 z-50 transition-all duration-300 ${
-        show ? "translate-x-0 opacity-100" : "translate-x-96 opacity-0"
+      className={`fixed bottom-24 sm:bottom-8 items-center bg-red-500/90 backdrop-blur-md text-white px-6 py-4 rounded-lg shadow-2xl border border-red-400 z-50 transition-all duration-300 ${
+        show
+          ? "translate-y-0 sm:translate-x-0 opacity-100"
+          : "translate-y-96 sm:translate-y-0 sm:translate-x-96 opacity-0"
       }`}
     >
       <div className="flex items-center gap-3">
