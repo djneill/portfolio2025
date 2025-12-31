@@ -31,7 +31,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-4 bg-slate-900/50">
+    <section id="about" className="py-4 bg-slate-900/50 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial="hidden"

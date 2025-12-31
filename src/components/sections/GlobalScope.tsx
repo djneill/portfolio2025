@@ -4,7 +4,7 @@ import SectionTitle from "../ui/SectionTitle";
 
 export default function GlobalScope() {
   return (
-    <section id="global-scope" className="py-32 bg-slate-900/50">
+    <section id="global-scope" className="pt-32 pb-12 sm:py-32 bg-slate-900/50">
       <div className="max-w-6xl mx-auto px-8 md:px-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -26,8 +26,9 @@ export default function GlobalScope() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } items-center gap-12 md:gap-24`}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } items-center gap-12 md:gap-24`}
             >
               {/* Image Side */}
               <div className="flex-1 w-full">
@@ -89,11 +90,6 @@ export default function GlobalScope() {
                 <p className="text-xl text-slate-400 leading-relaxed">
                   {item.description}
                 </p>
-
-                <div className="flex items-center gap-2 text-slate-500 font-mono text-sm justify-center md:justify-start">
-                  <span className="w-2 h-2 rounded-full bg-slate-700 animate-pulse" />
-                  <span>active_connection: community_v1.0.0</span>
-                </div>
               </div>
             </motion.div>
           ))}

@@ -6,7 +6,7 @@ export default function Clients() {
   const duplicatedClients = [...clients, ...clients, ...clients];
 
   return (
-    <section className="py-32 bg-slate-800/30 overflow-hidden">
+    <section className="py-32 bg-slate-800/30 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
           title="Companies I've Worked With"
