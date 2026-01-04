@@ -25,9 +25,9 @@ export default function Clients() {
               {duplicatedClients.map((client, index) => (
                 <div
                   key={`${client.id}-${index}`}
-                  className="shrink-0 mx-8 w-56 h-28 flex items-center justify-center"
+                  className="shrink-0 mx-8 w-72 h-36 md:w-80 md:h-40 flex items-center justify-center"
                 >
-                  <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 w-full h-full flex items-center justify-center group">
+                  <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 w-full h-full flex items-center justify-center group">
                     <img
                       src={client.logo}
                       alt={client.name}
