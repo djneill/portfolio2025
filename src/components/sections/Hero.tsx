@@ -49,6 +49,13 @@ const FloatingShapes = () => {
       image: "/images/hero/pickleball.png",
       alt: "Pickleball paddle",
     },
+    {
+      type: "image",
+      className:
+        "bottom-[2%] left-[20%] sm:bottom-[20%] sm:left-[20%] float-medium",
+      image: "/images/hero/bjj.png",
+      alt: "BJJ GI",
+    },
   ];
 
   return (

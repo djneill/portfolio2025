@@ -40,7 +40,7 @@ export const conferencePhotos: ConferencePhoto[] = [
   {
     id: "7",
     image: "/images/conferences/pickleball.jpg",
-    caption: "Commit Your Code Pickleball",
+    caption: "Commit Your Code 2025 Pickleball",
     event: "CYC 2025",
   },
   {
@@ -55,24 +55,24 @@ export const conferencePhotos: ConferencePhoto[] = [
     caption: "Commit Your Code 2024",
     event: "CYC 2024",
   },
-  {
-    id: "10",
-    image: "/images/conferences/fowling.jpg",
-    caption: "Commit Your Code 2025 Social Event",
-    event: "CYC 2024",
-  },
-  {
-    id: "11",
-    image: "/images/conferences/fowling2.jpg",
-    caption: "Fowling Warehouse Fun CYC 25",
-    event: "CYC 2024",
-  },
-  {
-    id: "12",
-    image: "/images/conferences/pickleballself.jpg",
-    caption: "Pickleball Kingdom CYC 25",
-    event: "CYC 2025",
-  },
+  // {
+  //   id: "10",
+  //   image: "/images/conferences/fowling.jpg",
+  //   caption: "Commit Your Code 2025 Social Event",
+  //   event: "CYC 2025",
+  // },
+  // {
+  //   id: "11",
+  //   image: "/images/conferences/fowling2.jpg",
+  //   caption: "Fowling Warehouse Fun CYC 25",
+  //   event: "CYC 2025",
+  // },
+  // {
+  //   id: "12",
+  //   image: "/images/conferences/pickleballself.jpg",
+  //   caption: "Pickleball Kingdom CYC 25",
+  //   event: "CYC 2025",
+  // },
   // {
   //   id: "12",
   //   image: "/images/conferences/nick.jpg",
