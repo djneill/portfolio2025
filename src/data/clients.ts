@@ -15,24 +15,30 @@ export const clients: Client[] = [
   },
   {
     id: "3",
+    name: "B's Treats",
+    logo: "/images/clients/bs_logo.webp",
+    website: "https://eatbstreats.com/",
+  },
+  {
+    id: "4",
     name: "Beauty By Bea",
     logo: "/images/clients/bbb.webp",
     website: "https://beautybybea.netlify.app/",
   },
   {
-    id: "4",
+    id: "5",
     name: "Parada Restoration & Cleaning",
     logo: "/images/clients/pr.webp",
     website: "https://paradarestoration.netlify.app/",
   },
   {
-    id: "5",
+    id: "6",
     name: "Travis Moore BJJ",
     logo: "/images/clients/tmbjj.webp",
     website: "https://tmbjj.netlify.app/",
   },
   {
-    id: "6",
+    id: "7",
     name: "Tacos Los Troncos",
     logo: "/images/clients/tacolt.webp",
     website: "https://tacos-los-troncos.netlify.app/",

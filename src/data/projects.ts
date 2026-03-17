@@ -13,11 +13,14 @@ export const projects: Project[] = [
     description:
       "Tenant Pro is a comprehensive apartment management platform that transforms the tenant experience through smart technology integration. The platform provides a centralized dashboard where tenants can manage their living space with features including smart lock controls, package management, guest access, maintenance requests, and thermostat controls. Built with modern technologies like TypeScript, React, and ASP.NET, Tenant Pro streamlines daily living tasks while enhancing security and convenience. The platform's intuitive interface and real-time notifications ensure tenants stay connected to their home, whether they're managing deliveries, controlling their smart lock, or reporting maintenance issues.",
     deepDive: {
-      challenge: "Building a secure, role-aware apartment portal that supports real-world tenant and admin workflows, maintenance requests, lease renewals, access control, and package management while remaining scalable and understandable across a multi-developer team.",
-      tradeOff: "We debated how much business logic should live on the client versus the server. A thinner API could speed up frontend development, but risk duplicated logic and security gaps, while a more opinionated backend required upfront design and stricter contracts.",
-      decision: "We chose a backend-first approach using ASP.NET Core to own validation, authorization, and business rules, with React focused on state management and user experience. Admin-only features like tenant management, lease renewals, and AI-assisted maintenance insights are enforced server-side through role-based authorization.",
-      why: "Centralizing business logic in the backend reduced duplication, improved security, and made the system easier to reason about during code reviews. Clear role boundaries allowed the UI to stay simple while still supporting complex features like AI-driven maintenance insights and admin-controlled tenant actions. In a collaborative environment led by senior engineers, clarity and explicit intent mattered more than short-term velocity, resulting in a codebase that can evolve safely as features expand."
-    }
+      challenge:
+        "Building a secure, role-aware apartment portal that supports real-world tenant and admin workflows, maintenance requests, lease renewals, access control, and package management while remaining scalable and understandable across a multi-developer team.",
+      tradeOff:
+        "We debated how much business logic should live on the client versus the server. A thinner API could speed up frontend development, but risk duplicated logic and security gaps, while a more opinionated backend required upfront design and stricter contracts.",
+      decision:
+        "We chose a backend-first approach using ASP.NET Core to own validation, authorization, and business rules, with React focused on state management and user experience. Admin-only features like tenant management, lease renewals, and AI-assisted maintenance insights are enforced server-side through role-based authorization.",
+      why: "Centralizing business logic in the backend reduced duplication, improved security, and made the system easier to reason about during code reviews. Clear role boundaries allowed the UI to stay simple while still supporting complex features like AI-driven maintenance insights and admin-controlled tenant actions. In a collaborative environment led by senior engineers, clarity and explicit intent mattered more than short-term velocity, resulting in a codebase that can evolve safely as features expand.",
+    },
   },
   {
     id: "2",
@@ -31,11 +34,35 @@ export const projects: Project[] = [
     description:
       "PennyWise - Personal Finance Dashboard is a sleek, all-in-one personal finance management app designed to help users take control of their money with clarity and confidence. The interactive dashboard provides a real-time snapshot of total balance, monthly income and expenses, and savings rate, offering users a clear financial overview at a glance. \nUsers can view recent transactions categorized by type, monitor account balances across checking, savings, and credit accounts, and visualize spending habits through dynamic budget progress bars. The built-in budgeting tool allows users to allocate realistic spending limits across categories and track their usage in real-time, while the reporting feature enables the creation of detailed income and expense reports. \nWhether you're saving for a goal or trying to rein in spending, PennyWise helps you track every dollar and build better financial habits.",
     deepDive: {
-      challenge: "Building a secure, multi-tenant financial SaaS with real-time updates while maintaining data isolation and ensuring schema decisions support excellent UX rather than just storage convenience.",
-      tradeOff: "I debated between continuing with Next.js/Supabase or switching to a .NET backend for potentially better enterprise scalability and type safety across the full stack.",
-      decision: "I chose to stay with Next.js + Supabase PostgreSQL, leveraging Row Level Security (RLS) for data isolation and real-time subscriptions for live updates. I also refactored from a single description field to separate name and description fields in transactions.",
-      why: "The Next.js/Supabase stack provides faster iteration for MVP development with battle-tested security through RLS. The schema refactoring reinforced a key lesson: design your data model around user experience first. What seemed like a simple field split cascaded through TransactionModal, hooks, type definitions, and multiple display components. Proving that in modern web apps, every data decision is really a UX decision. For a bootstrapped SaaS, shipping quickly with proven tech beats theoretical scalability."
-    }
+      challenge:
+        "Building a secure, multi-tenant financial SaaS with real-time updates while maintaining data isolation and ensuring schema decisions support excellent UX rather than just storage convenience.",
+      tradeOff:
+        "I debated between continuing with Next.js/Supabase or switching to a .NET backend for potentially better enterprise scalability and type safety across the full stack.",
+      decision:
+        "I chose to stay with Next.js + Supabase PostgreSQL, leveraging Row Level Security (RLS) for data isolation and real-time subscriptions for live updates. I also refactored from a single description field to separate name and description fields in transactions.",
+      why: "The Next.js/Supabase stack provides faster iteration for MVP development with battle-tested security through RLS. The schema refactoring reinforced a key lesson: design your data model around user experience first. What seemed like a simple field split cascaded through TransactionModal, hooks, type definitions, and multiple display components. Proving that in modern web apps, every data decision is really a UX decision. For a bootstrapped SaaS, shipping quickly with proven tech beats theoretical scalability.",
+    },
+  },
+  {
+    id: "3",
+    tag: "Freelance",
+    title: "B's Treats - Food Truck Tracker & Business Site",
+    img: "/images/work_images/bs_treats_hero.webp",
+    languages: "React, Vite, JavaScript, CSS",
+    link: "https://eatbstreats.com",
+    repoLink: "",
+    linkText: "",
+    description:
+      "B's Treats is a freelance project built for a local food truck serving froyo waffle bowls, acai bowls, and iced coffee. The centerpiece is a live truck tracker that displays the truck's current location, hours of operation, and event schedule, keeping customers always in the loop. The site features one-tap direction and location-sharing buttons so customers can find the truck without friction. A key constraint was building the entire system around a non-technical owner who needed to update the truck's location and schedule on their own, no developer required. The result is a clean, mobile-first experience that turns a moving business into an easy-to-find destination.",
+    deepDive: {
+      challenge:
+        "The truck moves constantly, different locations, and events every day. Customers needed real-time location info, but the owner needed to update it herself without touching code or calling a developer.",
+      tradeOff:
+        "I considered using a live GPS integration to automate location updates, but that added hardware cost and complexity the client didn't need. The alternative was a simple, manual update flow, but it had to be dead simple or it wouldn't get used.",
+      decision:
+        "I built a lightweight admin interface that lets the client update the truck's current location, hours, and event info through a straightforward form. On the customer side, the tracker displays that data with a 'Get Directions' button that hands off to Google Maps and a share button for native device sharing.",
+      why: "Matching the solution to the actual user, not the ideal technical user, was the core lesson here. A fully automated GPS system would've been over-engineered for a single-truck operation. Keeping the update flow manual but friction-free meant the owner actually uses it, which means customers always have accurate info. The best feature is one that gets used consistently, not one that's technically impressive but abandoned.",
+    },
   },
   {
     id: "3",
