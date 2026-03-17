@@ -51,7 +51,7 @@ export const projects: Project[] = [
     languages: "React, Vite, Typescript, tailwind",
     link: "https://eatbstreats.com",
     repoLink: "",
-    linkText: "",
+    linkText: "eatbstreats.com",
     description:
       "B's Treats is a freelance project built for a local food truck serving froyo waffle bowls, acai bowls, and iced coffee. The centerpiece is a live truck tracker that displays the truck's current location, hours of operation, and event schedule, keeping customers always in the loop. The site features one-tap direction and location-sharing buttons so customers can find the truck without friction. A key constraint was building the entire system around a non-technical owner who needed to update the truck's location and schedule on their own, no developer required. The result is a clean, mobile-first experience that turns a moving business into an easy-to-find destination.",
     deepDive: {
