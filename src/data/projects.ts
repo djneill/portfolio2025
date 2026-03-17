@@ -48,7 +48,7 @@ export const projects: Project[] = [
     tag: "Freelance",
     title: "B's Treats - Food Truck Tracker & Business Site",
     img: "/images/work_images/bs_treats_hero.webp",
-    languages: "React, Vite, JavaScript, CSS",
+    languages: "React, Vite, Typescript, tailwind",
     link: "https://eatbstreats.com",
     repoLink: "",
     linkText: "",
