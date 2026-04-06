@@ -48,7 +48,7 @@ export const projects: Project[] = [
     tag: "Freelance",
     title: "B's Treats - Food Truck Tracker & Business Site",
     img: "/images/work_images/bs_treats_hero.webp",
-    languages: "React, Vite, Typescript, tailwind",
+    languages: "React, Vite, Typescript, Tailwind, Contentful",
     link: "https://eatbstreats.com",
     repoLink: "",
     linkText: "eatbstreats.com",
@@ -58,10 +58,10 @@ export const projects: Project[] = [
       challenge:
         "The truck moves constantly, different locations, and events every day. Customers needed real-time location info, but the owner needed to update it herself without touching code or calling a developer.",
       tradeOff:
-        "I considered using a live GPS integration to automate location updates, but that added hardware cost and complexity the client didn't need. The alternative was a simple, manual update flow, but it had to be dead simple or it wouldn't get used.",
+        "I considered building a custom admin dashboard, but that meant maintaining auth, a backend, and a UI the client would still find unfamiliar. The alternative was a headless CMS, more opinionated, but designed exactly for non-technical content updates.",
       decision:
-        "I built a lightweight admin interface that lets the client update the truck's current location, hours, and event info through a straightforward form. On the customer side, the tracker displays that data with a 'Get Directions' button that hands off to Google Maps and a share button for native device sharing.",
-      why: "Matching the solution to the actual user, not the ideal technical user, was the core lesson here. A fully automated GPS system would've been over-engineered for a single-truck operation. Keeping the update flow manual but friction-free meant the owner actually uses it, which means customers always have accurate info. The best feature is one that gets used consistently, not one that's technically impressive but abandoned.",
+        "I integrated Contentful as the headless CMS, giving the client a clean, structured interface to update the truck's location, hours, and event info. On the customer side, the site fetches that data at build time and on-demand, displaying it with a 'Get Directions' button and native share support.",
+      why: "Contentful's content model let me define exactly what the owner could edit, location, hours, and events without exposing anything she shouldn't touch. The familiar, app-like editor meant she could update the truck's info from her phone between stops. The best admin interface is one the client actually opens. Contentful was that interface.",
     },
   },
   {
