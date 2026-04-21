@@ -65,6 +65,28 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "4",
+    tag: "Personal",
+    title: "PickleTrack - Pickleball Scoreboard",
+    img: "/images/work_images/pickletrack_hero.webp",
+    languages:
+      "React, TypeScript, .NET 9, PostgreSQL, Docker, Playwright, GitHub Actions",
+    link: "https://pickletrack.onrender.com/auth",
+    repoLink: "https://github.com/djneill/Pickleball-Scoreboard",
+    linkText: "View Repo",
+    description:
+      "PickleTrack is a full-stack pickleball scoreboard built as a showcase of professional .NET development practices. The premise is simple, track scores and match stats during a game, but the engineering underneath is the point. The backend is a .NET 9 Web API with ASP.NET Core Identity, JWT authentication, Google OAuth, and a PostgreSQL database with per-user data isolation. The project ships with 60 tests across three layers: unit, integration, and end-to-end via Playwright. A GitHub Actions CI/CD pipeline runs the full test suite on every push and deploys automatically. The app was initially deployed to Azure, then migrated to Render using Docker containerization. It's a small problem solved with a production-grade approach.",
+    deepDive: {
+      challenge:
+        "The technical challenge wasn't the scoreboard, it was building a system with the same rigor you'd bring to a production codebase at work. That meant real authentication, real user isolation, a real test strategy, and a real deployment pipeline. The app needed to prove the process, not just the feature.",
+      tradeOff:
+        "I could have stopped at a working app with manual deployments and a handful of happy-path tests. Instead I invested in a CI/CD pipeline with GitHub Actions that gates every merge on a passing test suite, and a Docker setup that made the environment portable enough to migrate hosting providers without touching the application code.",
+      decision:
+        "I implemented a three-tier database strategy, SQLite for local development, PostgreSQL on Supabase for production, and an in-memory database for tests, so the app behaves consistently across every environment. The 13 Playwright E2E tests cover the complete user journey: registration, game selection, scoring, stat persistence, and game completion. Unit and integration tests cover the .NET service and auth layers independently.",
+      why: "The migration from Azure to Render was the moment the Docker investment paid off. Swapping hosting providers meant updating environment variables and repointing a container, not rewriting deployment config. That's the kind of decision that looks boring until it saves you hours. The pipeline, the test coverage, and the containerization are all answers to the same question: how do you build something you can confidently hand off, extend, or move?",
+    },
+  },
+  {
     id: "3",
     tag: "Website",
     title: "808 Island Grinds",
