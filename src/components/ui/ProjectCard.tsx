@@ -7,6 +7,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import ProjectDeepDiveModal from "./ProjectDeepDiveModal";
+import ProjectDetailModal from "./ProjectDetailModal";
 import Button from "./Button";
 
 interface ProjectCardProps {
@@ -15,6 +16,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [isDeepDiveOpen, setIsDeepDiveOpen] = useState(false);
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
   const languages = project.languages.split(", ");
   const hasRepoLink = project.repoLink && project.repoLink.trim() !== "";
 
@@ -33,11 +35,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Project Image */}
-      <div className="relative h-48 overflow-hidden bg-slate-900 shrink-0 group-hover:scale-[1.02] transition-transform duration-500">
+      <div className="relative h-48 overflow-hidden bg-slate-900 shrink-0">
         <img
           src={project.img}
           alt={project.title}
-          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+          className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#0d1425] to-transparent opacity-60" />
       </div>
@@ -58,6 +60,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
             {project.description}
           </p>
+          <button
+            onClick={() => setIsDetailOpen(true)}
+            className="mt-2 text-xs text-cyan-500 hover:text-cyan-400 transition-colors cursor-pointer"
+          >
+            Read more
+          </button>
         </div>
 
         <div className="h-px bg-slate-800/50 w-full mb-6" />
@@ -124,6 +132,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         onClose={() => setIsDeepDiveOpen(false)}
         deepDive={project.deepDive}
         projectTitle={project.title}
+      />
+      <ProjectDetailModal
+        isOpen={isDetailOpen}
+        onClose={() => setIsDetailOpen(false)}
+        project={project}
       />
     </div>
   );
