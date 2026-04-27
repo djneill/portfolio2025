@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { FiUser, FiBriefcase, FiMail, FiUsers } from "react-icons/fi";
+import { Link } from "react-router";
+import { FiUser, FiBriefcase, FiMail, FiUsers, FiBookOpen } from "react-icons/fi";
 
 interface NavItem {
   label: string;
@@ -60,7 +61,7 @@ export default function Navigation() {
             </button>
 
             {/* Nav Links */}
-            <div className="flex gap-8">
+            <div className="flex gap-8 items-center">
               {navItems.map((item) => (
                 <button
                   key={item.href}
@@ -80,6 +81,12 @@ export default function Navigation() {
                   />
                 </button>
               ))}
+              <Link
+                to="/blog"
+                className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+              >
+                Blog
+              </Link>
             </div>
           </div>
         </div>
@@ -134,6 +141,15 @@ export default function Navigation() {
                 </button>
               );
             })}
+
+            {/* Blog tab */}
+            <Link
+              to="/blog"
+              className="flex flex-col items-center justify-center min-w-0 flex-1 py-2 px-1 text-slate-400 hover:text-cyan-400 transition-colors"
+            >
+              <FiBookOpen className="w-5 h-5" />
+              <span className="text-[10px] mt-1 font-medium opacity-70">Blog</span>
+            </Link>
           </div>
         </div>
       </nav>

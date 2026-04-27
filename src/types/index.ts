@@ -45,3 +45,12 @@ export interface Socials {
   iconClass: string;
   label: string;
 }
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  tags?: string[];
+  readTime?: string;
+}

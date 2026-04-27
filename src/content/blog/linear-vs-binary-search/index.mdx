@@ -1,0 +1,261 @@
+---
+title: "Linear Search vs Binary Search (and Why It Actually Matters)"
+date: "2026-04-27"
+description: "How linear and binary search work, when to use each one, and what it actually costs to maintain sorted data, with step counts that make the scale real."
+tags: ["Algorithms", "Big-O", "Typescript", "C#"]
+readTime: "7 min read"
+---
+
+import SearchVisualizer from "./SearchVisualizer";
+import CodeTabs from "../../../components/blog/CodeTabs";
+
+When you're working with data, one of the most common things your code does is search.
+
+Let's say you have a list of users, transactions, or even just numbers. How you search through that data can make the difference between something feeling instant… or painfully slow.
+
+Two of the most fundamental ways to search are **linear search** and **binary search**. They solve the same problem, but they behave very differently as your data grows.
+
+---
+
+## The Problem
+
+Imagine you have a list of 1,000,000 items and you need to find one specific value.
+
+How do you do it?
+
+---
+
+## Linear Search
+
+The simplest approach is to start at the beginning and check each item one by one until you find what you're looking for.
+
+That's linear search.
+
+### How it works
+
+1. Start at index 0
+2. Compare each value to the target
+3. Move to the next item
+4. Repeat until found, or you hit the end
+
+<CodeTabs labels={["TypeScript", "C#"]}>
+
+```ts
+function linearSearch(arr: number[], target: number): number {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i;
+    }
+  }
+  return -1;
+}
+```
+
+```csharp
+public static int LinearSearch(int[] arr, int target)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
+```
+
+</CodeTabs>
+
+### Time Complexity: O(n)
+
+In the worst case, you check every single element. If there are 1,000,000 items, you might do 1,000,000 checks.
+
+### When it's useful
+
+- Data is unsorted
+- Simplicity matters more than speed
+- Small datasets where the difference is negligible
+
+---
+
+## Binary Search
+
+Now let's take a smarter approach.
+
+Instead of checking every item, what if we could eliminate half the list every time we check?
+
+That's binary search.
+
+### The idea
+
+Think of it like a guessing game: _"Pick a number between 1 and 100."_
+
+You don't start at 1. You start in the middle (50), then adjust up or down based on the answer.
+
+Binary search does the same thing.
+
+### Requirements
+
+👉 **The array must be sorted.**
+
+Without sorting, binary search doesn't work. We'll come back to why that matters.
+
+### How it works
+
+1. Check the middle element
+2. If it's the target → done
+3. If the target is smaller → search the left half
+4. If the target is larger → search the right half
+5. Repeat with the new, smaller window
+
+<CodeTabs labels={["TypeScript", "C#"]}>
+
+```ts
+function binarySearch(arr: number[], target: number): number {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+
+    if (arr[mid] === target) {
+      return mid;
+    }
+
+    if (target < arr[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+
+  return -1;
+}
+```
+
+```csharp
+public static int BinarySearch(int[] arr, int target)
+{
+    int left = 0;
+    int right = arr.Length - 1;
+
+    while (left <= right)
+    {
+        // left + (right - left) / 2 avoids integer overflow on large arrays
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) return mid;
+
+        if (target < arr[mid])
+            right = mid - 1;
+        else
+            left = mid + 1;
+    }
+
+    return -1;
+}
+```
+
+</CodeTabs>
+
+### Time Complexity: O(log n)
+
+Each step cuts the problem in half. Even huge datasets become manageable fast.
+
+---
+
+## Try It
+
+<SearchVisualizer />
+
+Try searching for `7` or `1` — values that _aren't_ in the array. Watch how many steps linear search wastes, then switch to Binary and see how quickly it gives up.
+
+---
+
+## Side-by-Side Comparison
+
+Here's where things get interesting:
+
+| Items     | Linear Search         | Binary Search |
+| --------- | --------------------- | ------------- |
+| 100       | up to 100 steps       | ~7 steps      |
+| 1,000     | up to 1,000 steps     | ~10 steps     |
+| 1,000,000 | up to 1,000,000 steps | ~20 steps     |
+
+That difference scales fast.
+
+---
+
+## Why This Matters
+
+At small scale, both approaches feel the same.
+
+But in real applications, large datasets, API responses, financial transactions, user lists, that's where efficiency matters.
+
+The difference between **1,000,000 operations** and **20 operations** is the difference between a feature that feels slow and one that feels instant.
+
+---
+
+## The Trade-Off
+
+Binary search is faster, but it comes with a cost: **you need sorted data**.
+
+And maintaining sorted data is more expensive than it looks.
+
+### Inserting into a sorted array
+
+When you add a new value, you can't just append it to the end. You have to find exactly where it belongs, then shift every element after that position one spot to the right to make room.
+
+```
+Insert 17 into [2, 12, 16, 23, 38]:
+
+1. Find the correct position: 17 goes between 16 and 23 (index 3)
+2. Shift 38 → index 4
+3. Shift 23 → index 3
+4. Place 17 at index 3
+
+Result: [2, 12, 16, 17, 23, 38]
+```
+
+### Deleting from a sorted array
+
+Deletion has the same problem in reverse. Once you remove an element, every item after it has to shift left to close the gap.
+
+```
+Delete 16 from [2, 12, 16, 23, 38]:
+
+1. Find 16 at index 2
+2. Shift 23 → index 2
+3. Shift 38 → index 3
+
+Result: [2, 12, 23, 38]
+```
+
+Both operations are **O(n)**, you're paying a linear cost every time you modify the array.
+
+So the real question isn't just _"which search is faster?"_ It's:
+
+**"How often am I reading vs. writing?"**
+
+If you insert once and search thousands of times, binary search is a clear win. If you're constantly inserting and deleting, that O(n) cost per modification adds up fast, and a different data structure (like a balanced tree or hash map) might be the better call.
+
+---
+
+## Real-World Takeaway
+
+If you're working with:
+
+- **Unsorted data** → linear search is fine
+- **Sorted data** (or data you can sort once) → binary search becomes powerful
+- **Frequently modified data** → reconsider whether an array is the right structure at all
+
+Understanding this isn't just academic. It directly impacts how your apps perform as they scale.
+
+---
+
+## Final Thought
+
+A lot of programming comes down to simple choices like this.
+
+Not just _can it work?_
+But _how well does it scale?_
+
+The better you understand that, the better engineer you become.
