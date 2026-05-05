@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router";
 import BlogNavigation from "../components/blog/BlogNavigation";
 import BlogLayout from "../components/blog/BlogLayout";
 import Footer from "../components/Footer";
+import { usePageMeta } from "../hooks/usePageMeta";
 import type { BlogPost } from "../types";
 
 type PostModule = {
@@ -21,6 +22,34 @@ export default function BlogPostPage() {
     path.includes(`/${slug}/index.mdx`)
   );
 
+  const [, mod] = entry ?? [undefined, undefined];
+
+  usePageMeta(
+    mod && slug
+      ? {
+          title: `${mod.frontmatter.title} | DJ Neill`,
+          description: mod.frontmatter.description,
+          canonical: `https://djneill.com/blog/${slug}`,
+          ogType: "article",
+          ogUrl: `https://djneill.com/blog/${slug}`,
+          jsonLd: {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: mod.frontmatter.title,
+            description: mod.frontmatter.description,
+            author: {
+              "@type": "Person",
+              name: "DJ Neill",
+              url: "https://djneill.com",
+            },
+            datePublished: mod.frontmatter.date,
+            url: `https://djneill.com/blog/${slug}`,
+            keywords: mod.frontmatter.tags?.join(", "),
+          },
+        }
+      : {}
+  );
+
   if (!entry) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
@@ -37,8 +66,7 @@ export default function BlogPostPage() {
     );
   }
 
-  const [, mod] = entry;
-  const Post = mod.default;
+  const Post = mod!.default;
 
   return (
     <div className="min-h-screen bg-slate-900">

@@ -4,8 +4,10 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Button from "../components/ui/Button";
 import ErrorTerminal from "../components/ui/ErrorTerminal";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 export default function NotFoundPage() {
+  usePageMeta({ noIndex: true });
   const [panicked, setPanicked] = useState(false);
   const navigate = useNavigate();
 

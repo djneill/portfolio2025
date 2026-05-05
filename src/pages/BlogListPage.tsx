@@ -1,6 +1,7 @@
 import BlogNavigation from "../components/blog/BlogNavigation";
 import BlogCard from "../components/blog/BlogCard";
 import Footer from "../components/Footer";
+import { usePageMeta } from "../hooks/usePageMeta";
 import type { BlogPost } from "../types";
 
 type PostModule = {
@@ -19,6 +20,14 @@ const posts: BlogPost[] = Object.entries(modules)
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export default function BlogListPage() {
+  usePageMeta({
+    title: "Blog | DJ Neill",
+    description: "Thoughts on software, algorithms, and the craft of development.",
+    canonical: "https://djneill.com/blog",
+    ogType: "website",
+    ogUrl: "https://djneill.com/blog",
+  });
+
   return (
     <div className="min-h-screen bg-slate-900 flex flex-col">
       <BlogNavigation />
