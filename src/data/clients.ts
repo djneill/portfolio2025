@@ -43,4 +43,10 @@ export const clients: Client[] = [
     logo: "/images/clients/tacolt.webp",
     website: "https://tacos-los-troncos.netlify.app/",
   },
+  {
+    id: "8",
+    name: "Moreno Lawn Service",
+    logo: "/images/clients/moreno.webp",
+    website: "https://mario-landscaping.netlify.app/",
+  },
 ];

@@ -6,7 +6,7 @@ export default function Clients() {
   const duplicatedClients = [...clients, ...clients, ...clients];
 
   return (
-    <section className="py-32 bg-slate-800/30 overflow-x-hidden">
+    <section className="py-20 bg-slate-800/30 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
           title="Companies I've Worked With"
@@ -25,13 +25,13 @@ export default function Clients() {
               {duplicatedClients.map((client, index) => (
                 <div
                   key={`${client.id}-${index}`}
-                  className="shrink-0 mx-8 w-72 h-36 md:w-80 md:h-40 flex items-center justify-center"
+                  className="shrink-0 mx-4 w-56 h-28 md:w-64 md:h-32 flex items-center justify-center"
                 >
-                  <div className="bg-slate-800/50 rounded-xl p-8 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 w-full h-full flex items-center justify-center group">
+                  <div className="bg-slate-800/50 rounded-xl p-5 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 w-full h-full flex items-center justify-center group">
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="max-w-full max-h-full object-contain transition-all duration-300"
                     />
                   </div>
                 </div>
