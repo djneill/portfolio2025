@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { projects } from "../../data/projects";
 import type { Project } from "../../types";
 import SectionTitle from "../ui/SectionTitle";
@@ -17,7 +16,7 @@ export default function Projects() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           variants={fadeUpVariants}
         >
@@ -29,7 +28,11 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 auto-rows-fr">
           {projects.map((project, index) => (
-            <Tilt3DCard key={project.id} project={project} index={index} />
+            <ProjectRevealCard
+              key={`${project.id}-${project.title}`}
+              project={project}
+              index={index}
+            />
           ))}
         </div>
       </div>
@@ -37,31 +40,30 @@ export default function Projects() {
   );
 }
 
-function Tilt3DCard({ project, index }: { project: Project; index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 0.7", "center center"],
-  });
-
+function ProjectRevealCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
   const isLeft = index % 2 === 0;
-  const rotateY = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [isLeft ? -25 : 25, 0]
-  );
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
 
   return (
     <motion.div
-      ref={ref}
-      style={{
-        opacity,
-        scale,
-        rotateY,
-        transformPerspective: 1000,
+      initial={{
+        opacity: 0,
+        scale: 0.96,
+        rotateY: isLeft ? -8 : 8,
       }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        rotateY: 0,
+      }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+      style={{ transformPerspective: 1000 }}
       className="h-full"
     >
       <div className="h-full">

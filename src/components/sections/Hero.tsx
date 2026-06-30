@@ -59,7 +59,7 @@ const FloatingShapes = () => {
   ];
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 contain-paint">
       {shapes.map((shape, i) => (
         <div
           key={i}
@@ -71,12 +71,9 @@ const FloatingShapes = () => {
             <img
               src={shape.image}
               alt={shape.alt}
-              className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 object-contain drop-shadow-lg"
+              className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 object-contain"
               style={{
                 imageRendering: "-webkit-optimize-contrast",
-                backfaceVisibility: "hidden",
-                transform: "translateZ(0)",
-                willChange: "transform",
               }}
             />
           ) : (
@@ -269,7 +266,7 @@ export default function Hero() {
       {/* Background Toggle Button */}
       <button
         onClick={() => setUseCircuitBg(!useCircuitBg)}
-        className="absolute top-2 sm:top-4 right-4 z-50 px-4 py-2 bg-slate-800/80 backdrop-blur-sm border border-cyan-500/30 rounded-lg text-cyan-400 text-sm font-medium hover:bg-slate-700/80 hover:border-cyan-500 transition-all duration-300 shadow-lg"
+        className="absolute top-2 sm:top-4 right-4 z-50 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-lg text-cyan-400 text-sm font-medium hover:bg-slate-700 hover:border-cyan-500 transition-all duration-300 shadow-lg"
         title="Toggle background pattern"
       >
         {useCircuitBg ? "Geometric" : "Circuit board"}
@@ -342,7 +339,7 @@ export default function Hero() {
           <Button
             variant="outline"
             size="lg"
-            className="backdrop-blur-sm cursor-pointer"
+            className="cursor-pointer"
             onClick={() => scrollToSection("contact")}
           >
             Get In Touch

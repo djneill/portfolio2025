@@ -31,6 +31,8 @@ export default function Clients() {
                     <img
                       src={client.logo}
                       alt={client.name}
+                      loading="lazy"
+                      decoding="async"
                       className="max-w-full max-h-full object-contain transition-all duration-300"
                     />
                   </div>

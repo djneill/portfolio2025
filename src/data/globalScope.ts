@@ -12,7 +12,7 @@ export const globalScopeHighlights = [
         description:
             "Contributing to meetups and workshops to bring developers together. Because the best social infrastructure is human connection.",
         Icon: HiUsers,
-        image: "/images/conferences/lunchmeet.jpg",
+        image: "/images/conferences/lunchmeet.webp",
         accent: "from-cyan-500 to-blue-500",
     },
     {
@@ -21,7 +21,7 @@ export const globalScopeHighlights = [
         description:
             "Collaborating with local non-profits like Code for America's chapters in Austin & Dallas to build tech that makes a real difference in our community.",
         Icon: HiGlobeAlt,
-        image: "/images/conferences/truckyard.jpg",
+        image: "/images/conferences/truckyard.webp",
         accent: "from-emerald-500 to-teal-500",
     },
     {
@@ -30,7 +30,7 @@ export const globalScopeHighlights = [
         description:
             "Contributing to the digital commons. Helping maintain and improve the open-source tools that power the web for everyone.",
         Icon: HiCodeBracket,
-        image: "/images/conferences/jerseySourced.jpg",
+        image: "/images/conferences/jerseySourced.webp",
         accent: "from-purple-500 to-pink-500",
     },
     {
@@ -39,7 +39,7 @@ export const globalScopeHighlights = [
         description:
             "Championing the 'lift as you climb' mentality. Actively participating in knowledge sharing and connecting with fellow developers to build each other up.",
         Icon: HiLightBulb,
-        image: "/images/conferences/group.jpg",
+        image: "/images/conferences/group.webp",
         accent: "from-orange-500 to-amber-500",
     },
 ];

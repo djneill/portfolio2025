@@ -36,7 +36,7 @@ export default function About() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           variants={fadeUpVariants}
         >
@@ -49,7 +49,7 @@ export default function About() {
             className="flex justify-center group"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             variants={fadeFromLeftVariants}
           >
@@ -58,6 +58,8 @@ export default function About() {
               <img
                 src="/images/conferences/headShot.webp"
                 alt="Profile Picture"
+                loading="lazy"
+                decoding="async"
                 className="w-auto h-auto"
               />
             </div>
@@ -67,7 +69,7 @@ export default function About() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             variants={fadeFromRightVariants}
           >
@@ -105,6 +107,8 @@ export default function About() {
                       <img
                         src={`https://skillicons.dev/icons?i=${tech.icon}&theme=dark`}
                         alt={tech.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-12 h-12 relative z-10"
                       />
                     </div>

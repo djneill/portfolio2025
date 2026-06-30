@@ -10,9 +10,9 @@ export default function Testimonial() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row items-center gap-12 bg-slate-800/40 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-slate-700/50 shadow-2xl"
+          className="flex flex-col md:flex-row items-center gap-12 bg-slate-800 rounded-3xl p-8 md:p-12 border border-slate-700/50 shadow-xl"
         >
           {/* Polaroid Image */}
           <div className="shrink-0 w-full md:w-1/3 flex justify-center">
@@ -20,7 +20,7 @@ export default function Testimonial() {
               className="polaroid-wrapper"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-100px" }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{
                 duration: 0.6,
                 ease: "easeOut",
@@ -40,7 +40,7 @@ export default function Testimonial() {
                     ease: "backOut",
                   },
                 }}
-                viewport={{ once: false, margin: "-100px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{
                   type: "spring",
                   stiffness: 300,
@@ -56,6 +56,8 @@ export default function Testimonial() {
                 <img
                   src="/images/blueThumbTack.png"
                   alt="thumbtack"
+                  loading="lazy"
+                  decoding="async"
                   className="w-12"
                 />
               </motion.div>
@@ -85,8 +87,10 @@ export default function Testimonial() {
                 <div className="polaroid-inner">
                   <div className="polaroid-image">
                     <img
-                      src="/images/testimonial/selfATX.jpg"
+                      src="/images/testimonial/selfATX.webp"
                       alt="DJ and colleagues"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -124,8 +128,8 @@ export default function Testimonial() {
       </div>
 
       {/* Background Decorative Elements */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-cyan-500/5 rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full pointer-events-none"></div>
     </section>
   );
 }

@@ -40,7 +40,7 @@ export default function ConsultantProcess() {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                     <SectionTitle
@@ -52,7 +52,7 @@ export default function ConsultantProcess() {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="flex justify-center -mt-6 mb-12"
                 >
@@ -72,7 +72,7 @@ export default function ConsultantProcess() {
                     <motion.div
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
                         style={{ originX: 0 }}
                         className="absolute top-12 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-emerald-500/30 hidden md:block"
@@ -84,7 +84,7 @@ export default function ConsultantProcess() {
                                 key={step.title}
                                 initial="hidden"
                                 whileInView="visible"
-                                viewport={{ once: false }}
+                                viewport={{ once: true }}
                                 className="flex flex-col items-center text-center group"
                             >
                                 {/* Icon Circle */}
@@ -136,7 +136,7 @@ export default function ConsultantProcess() {
             </div>
 
             {/* Background elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-800/20 rounded-full blur-[120px] -z-1" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-800/10 rounded-full -z-1" />
         </section>
     );
 }

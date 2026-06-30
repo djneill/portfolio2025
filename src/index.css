@@ -567,19 +567,40 @@ html {
   animation: slow-float 10s ease-in-out infinite;
 }
 
+.contain-paint {
+  contain: paint;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .float-slow,
+  .float-medium,
+  .float-fast,
+  .glitch,
+  .glitch::before,
+  .glitch::after,
+  .neon-glow,
+  .animate-scroll,
+  .animate-scroll-desktop {
+    animation: none;
+  }
+}
+
 /* Terminal Window Styles */
 .terminal-window {
-  background-color: rgba(15, 23, 42, 0.9);
+  background-color: rgb(15, 23, 42);
   border-radius: 0.75rem;
   border-width: 1px;
   border-color: rgba(51, 65, 85, 0.5);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  backdrop-filter: blur(12px);
 }
 
 .terminal-header {
-  background-color: rgba(30, 41, 59, 0.8);
+  background-color: rgb(30, 41, 59);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;

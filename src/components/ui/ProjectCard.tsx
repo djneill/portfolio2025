@@ -39,6 +39,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <img
           src={project.img}
           alt={project.title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#0d1425] to-transparent opacity-60" />

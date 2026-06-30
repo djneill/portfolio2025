@@ -15,7 +15,7 @@ export default function Conferences() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <SectionTitle
@@ -31,7 +31,7 @@ export default function Conferences() {
               className="polaroid-wrapper"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-100px" }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.1,
@@ -52,7 +52,7 @@ export default function Conferences() {
                     ease: "backOut",
                   },
                 }}
-                viewport={{ once: false, margin: "-100px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{
                   type: "spring",
                   stiffness: 300,
@@ -68,6 +68,8 @@ export default function Conferences() {
                 <img
                   src="/images/blueThumbTack.png"
                   alt="thumbtack"
+                  loading="lazy"
+                  decoding="async"
                   className="w-16 h-16 object-contain"
                 />
               </motion.div>

@@ -37,6 +37,8 @@ export default function ProjectDetailModal({
                 <img
                   src={project.img}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-top opacity-90"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-[#0a0f1e] to-transparent opacity-70" />

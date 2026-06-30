@@ -49,7 +49,7 @@ export default function Contact() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           variants={fadeUpVariants}
         >
@@ -64,7 +64,7 @@ export default function Contact() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             variants={fadeUpVariants}
           >
@@ -99,7 +99,7 @@ export default function Contact() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             variants={fadeUpVariants}
           >
