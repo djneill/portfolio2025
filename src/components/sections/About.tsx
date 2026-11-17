@@ -43,24 +43,33 @@ export default function About() {
           <SectionTitle title="About Me" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid gap-10 items-center md:grid-cols-[15rem_minmax(0,1fr)] md:gap-12 lg:grid-cols-[20rem_minmax(0,1fr)] lg:gap-16">
           {/* Profile Image */}
           <motion.div
-            className="flex justify-center group"
+            className="relative isolate w-60 lg:w-72 max-w-full mx-auto group"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             variants={fadeFromLeftVariants}
           >
-            <div className="absolute inset-0 bg-linear-to-r from-cyan-500 to-blue-500 rounded-2xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-4 -z-10 rounded-3xl bg-linear-to-br from-cyan-500 to-blue-500 blur-2xl opacity-15 group-hover:opacity-25 transition-opacity duration-300"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 translate-x-3 translate-y-3 rounded-3xl border border-cyan-400/20"
+            />
+            <div className="relative rounded-3xl border border-slate-700 bg-slate-800 p-2 shadow-xl shadow-slate-950/30">
               <img
                 src="/images/conferences/headShot.webp"
-                alt="Profile Picture"
+                alt="DJ Neill"
+                width={1086}
+                height={1448}
                 loading="lazy"
                 decoding="async"
-                className="w-auto h-auto"
+                className="block w-full h-auto rounded-2xl"
               />
             </div>
           </motion.div>
