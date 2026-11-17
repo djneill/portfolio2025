@@ -10,7 +10,7 @@ export default function About() {
     { name: "React", icon: "react" },
     { name: "Next.js", icon: "next" },
     { name: "Node.js", icon: "nodejs" },
-    { name: "MongoDB", icon: "mongodb" },
+    { name: "MySQL", icon: "mysql" },
     { name: "Tailwind CSS", icon: "tailwind" },
     { name: "Git", icon: "git" },
   ];
